@@ -1,5 +1,16 @@
 {
+  "name": "pnpm-package-group",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/pnpm-package-group.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/pnpm-package-group/issues"
+  },
+  "homepage": "https://github.com/ksxnodeapps/pnpm-package-group#readme",
+  "description": "",
   "main": "index.js",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "devDependencies": {
