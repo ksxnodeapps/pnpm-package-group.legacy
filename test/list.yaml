@@ -3,16 +3,11 @@ global:
   - def
   - ghi
 
-foo:
-  foo1:
-    - '123'
-    - '456'
-    - '789'
-  foo2:
-    - hjdj
+local1:
+  - foo
+  - bar
+  - baz
 
-bar:
-  bar1:
-    - jjj
-  bar2:
-    - qqq
+local2:
+  - qux
+  - quux

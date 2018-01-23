@@ -7,6 +7,17 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/index.js",
+      "args": [
+        "pnpm=echo",
+        "--local=out",
+        "test/list.yaml"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Jest Tests",
       "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
       "args": [
