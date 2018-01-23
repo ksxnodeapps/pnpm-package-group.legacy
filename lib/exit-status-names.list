@@ -1,0 +1,15 @@
+# General
+success
+other
+
+# Input Errors
+arguments
+parsing-error
+stdin
+empty-input
+
+# File System Errors
+filesystem
+
+# Schema
+schema

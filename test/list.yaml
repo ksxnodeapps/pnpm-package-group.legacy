@@ -1,0 +1,18 @@
+global:
+  - abc
+  - def
+  - ghi
+
+foo:
+  foo1:
+    - '123'
+    - '456'
+    - '789'
+  foo2:
+    - hjdj
+
+bar:
+  bar1:
+    - jjj
+  bar2:
+    - qqq

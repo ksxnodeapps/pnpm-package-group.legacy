@@ -1,10 +1,13 @@
 dependencies:
-  fs-extra: 5.0.0
+  fs-force: 3.1.0
+  get-stdin: 5.0.1
   js-yaml: 3.10.0
+  number-enum: 2.1.1
   pnpm: 1.30.2
+  yargs: 10.1.1
 devDependencies:
   '@pnpm/types': 1.7.0
-  '@types/fs-extra': 5.0.0
+  '@types/get-stdin': 5.0.1
   '@types/js-yaml': 3.10.1
   jest-cli: 22.1.4
   standard: 10.0.3
@@ -318,16 +321,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HI1tSO87vmd1sPS3DOVSK4gvVKROvCBFvAnXlLiQtAus/+1xXMQcNyu9TX2ChwRXFeQZeB9+f+nMo99xLd5DdA==
-  /@types/fs-extra/5.0.0:
-    dependencies:
-      '@types/node': 9.3.0
-    dev: true
-    resolution:
-      integrity: sha512-qtxDULQKUenuaDLW003CgC+0T0eiAfH3BrH+vSt87GLzbz5EZ6Ox6mv9rMttvhDOatbb9nYh0E1m7ydoYwUrAg==
   /@types/get-port/3.2.0:
     dev: false
     resolution:
       integrity: sha512-TiNg8R1kjDde5Pub9F9vCwZA/BNW9HeXP5b9j7Qucqncy/McfPZ6xze/EyBdXS5FhMIGN6Fx3vg75l5KHy3V1Q==
+  /@types/get-stdin/5.0.1:
+    dependencies:
+      '@types/node': 9.3.0
+    dev: true
+    resolution:
+      integrity: sha1-Rq+8rwnpT+Alr6B66ZSsMWitvfM=
   /@types/got/7.1.6:
     dependencies:
       '@types/node': 9.3.0
@@ -1320,7 +1323,6 @@ packages:
       string-width: 2.1.1
       strip-ansi: 4.0.0
       wrap-ansi: 2.1.0
-    dev: true
     resolution:
       integrity: sha512-nY3W5Gu2racvdDk//ELReY+dHjb9PlIcVDFXP72nVIhq2Gy3LuVXYwJoPVudwQnv1shtohpgkdCKT2YaKY0CKw==
   /clone-response/1.0.2:
@@ -2385,6 +2387,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-p1Xqe8Gt/MWjHOfnYtuq3F5jZEQ=
+  /extended-promise/0.2.0:
+    dev: false
+    engines:
+      node: '>= 6.0.0'
+    resolution:
+      integrity: sha1-tO8S/U/NzMGOSOqaAXEJubE5cWo=
   /extglob/0.3.2:
     dependencies:
       is-extglob: 1.0.0
@@ -2592,20 +2600,94 @@ packages:
     dev: false
     resolution:
       integrity: sha1-i/tVAr3kpNNs/e6gB/zKIdfjgq8=
-  /fs-extra/5.0.0:
+  /fs-force-delete-sync/1.0.0:
     dependencies:
-      graceful-fs: 4.1.11
-      jsonfile: 4.0.0
-      universalify: 0.1.1
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      just-try: 1.1.1
     dev: false
+    engines:
+      node: '>=6.0.0'
     resolution:
-      integrity: sha512-66Pm4RYbjzdyeuqudYqhFiNBbCIuI9kgRqLPSHIlXHidW8NIQtVdkM1yeZ4lXwuhbTETv3EUGMNHAAw6hiundQ==
+      integrity: sha1-bClX+U6TA+YRaOhSSq8nLHYEtdY=
+  /fs-force-delete/1.1.1:
+    dependencies:
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      fs-one-promise-queue: 1.0.1
+      try-promise: 1.0.0
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-bwl4xf+wMlJyz3lMaIFp29ujMqc=
+  /fs-force-mkdir-sync/1.1.0:
+    dependencies:
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      just-try: 1.1.1
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-kPRmGdf7DQXUmkgrewta87gAw1U=
+  /fs-force-mkdir/1.4.0:
+    dependencies:
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      fs-one-promise-queue: 1.0.1
+      try-promise: 1.0.0
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-uYnH3wLjRGQP3gux3i4u7KXNT00=
+  /fs-force-write-file-sync/1.0.1:
+    dependencies:
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      just-try: 1.1.1
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-Sn0ItBxzzsIQO3YtpBCno9FKOLY=
+  /fs-force-write-file/1.0.1:
+    dependencies:
+      fs-force-delete: 1.1.1
+      fs-force-mkdir: 1.4.0
+      fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
+      fs-one-promise-queue: 1.0.1
+      try-promise: 1.0.0
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-DIqRuUkzQTm564YPzyf1x6vPmIA=
+  /fs-force/3.1.0:
+    dependencies:
+      fs-force-action-as-string: github.com/ksxnodemodules/fs-force-action-as-string/2913726b38973ae2038a5b777a8ac2938ae2f765
+      fs-force-delete: 1.1.1
+      fs-force-delete-sync: 1.0.0
+      fs-force-mkdir: 1.4.0
+      fs-force-mkdir-sync: 1.1.0
+      fs-force-write-file: 1.0.1
+      fs-force-write-file-sync: 1.0.1
+    dev: false
+    engines:
+      node: '>=6.0.0'
+      npm: '>=3.0.0'
+    resolution:
+      integrity: sha1-5vWcnExAXgaCkipXXglI58Y7kKU=
   /fs-minipass/1.2.5:
     dependencies:
       minipass: 2.2.1
     dev: false
     resolution:
       integrity: sha512-JhBl0skXjUPCFH7x6x61gQxrKyXsxB5gcgePLZCwfyCGGsTISMoIeObbrvVeP6Xmyaudw4TT43qV2Gz+iyd2oQ==
+  /fs-one-promise-queue/1.0.1:
+    dependencies:
+      promise-queue: github.com/ksxnodemodules/promise-queue/5773019c5b20c3ccf3a6e888a502af6aac56d88c
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha1-heftO2oZjDPDlQ/bHc1ikcTXS+w=
   /fs-vacuum/1.2.10:
     dependencies:
       graceful-fs: 4.1.11
@@ -2712,7 +2794,6 @@ packages:
     resolution:
       integrity: sha1-iY3Me1WSrboC6LuCuNLNpgza5cU=
   /get-stdin/5.0.1:
-    dev: true
     engines:
       node: '>=0.12.0'
     resolution:
@@ -3867,12 +3948,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
-  /jsonfile/4.0.0:
-    dev: false
-    optionalDependencies:
-      graceful-fs: 4.1.11
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /jsonify/0.0.0:
     dev: true
     resolution:
@@ -3906,6 +3981,12 @@ packages:
       node: '>=4.0'
     resolution:
       integrity: sha1-OGchPo3Xm/Ho8jAMDPwe+xgsDfE=
+  /just-try/1.1.1:
+    dev: false
+    engines:
+      node: '>= 5.0.0'
+    resolution:
+      integrity: sha1-aLDCnqjML1bmWQspoBDmkSH4yrQ=
   /keyv/3.0.0:
     dependencies:
       json-buffer: 3.0.0
@@ -4718,6 +4799,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg==
+  /number-enum/2.1.1:
+    dependencies:
+      parallel-iterable: 3.0.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-YuxaC95KHjQqvU41jAebyNAvPmKQaeWdRpWrxVNA5BhG3CVeAwG1iLMZN76AZXxL2qlovldY5E6feXwtrmQ7FA==
   /number-is-nan/1.0.1:
     dev: false
     engines:
@@ -5064,7 +5153,6 @@ packages:
     dependencies:
       x-iterable-base: 4.0.1
       x-iterable-utils: 1.0.1
-    dev: true
     engines:
       node: '>= 6.0.0'
     resolution:
@@ -6189,13 +6277,13 @@ packages:
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
   /simple-class-utils/0.3.0:
-    dev: true
+    dev: false
     engines:
       node: '>=6.0.0'
     resolution:
       integrity: sha1-bUYj9QgTcViZL+Puxcbz8Q8N3rs=
   /simple-function-utils/2.3.0:
-    dev: true
+    dev: false
     engines:
       node: '>=5.0.0'
     resolution:
@@ -6815,6 +6903,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
+  /try-promise/1.0.0:
+    dev: false
+    engines:
+      node: '>= 5.0.0'
+    resolution:
+      integrity: sha1-vbOUgX49OpUq6poh+QPcprWWhTQ=
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.1.1
@@ -6922,10 +7016,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-nhBXzKhRq7kzmPizOuGHuZyuwRo=
-  /universalify/0.1.1:
-    dev: false
-    resolution:
-      integrity: sha1-+nG63UQ3r0wUiEHjs7Fl+enlkLc=
   /unpack-stream/3.0.1:
     dependencies:
       '@types/node': 9.3.0
@@ -7269,7 +7359,7 @@ packages:
     dependencies:
       simple-class-utils: 0.3.0
       simple-function-utils: 2.3.0
-    dev: true
+    dev: false
     engines:
       node: '>=6.0.0'
     resolution:
@@ -7277,7 +7367,6 @@ packages:
   /x-iterable-utils/1.0.1:
     dependencies:
       x-iterable-base: 4.0.1
-    dev: true
     engines:
       node: '>= 6.0.0'
     resolution:
@@ -7340,7 +7429,6 @@ packages:
   /yargs-parser/8.1.0:
     dependencies:
       camelcase: 4.1.0
-    dev: true
     resolution:
       integrity: sha512-yP+6QqN8BmrgW2ggLtTbdrOyBNSI7zBa4IykmiV5R1wl1JWNxQvWhMfMdmzIYtKU7oP3OOInY/tl2ov3BDjnJQ==
   /yargs/10.1.1:
@@ -7357,7 +7445,6 @@ packages:
       which-module: 2.0.0
       y18n: 3.2.1
       yargs-parser: 8.1.0
-    dev: true
     resolution:
       integrity: sha512-7uRL1HZdCbc1QTP+X8mehOPuCYKC/XTaqAPj7gABLfTt6pgLyVRn3QVte4qhtilZouWCvqd1kipgMKl5tKsFiw==
   /yargs/3.10.0:
@@ -7398,16 +7485,45 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Qv4qvc8ZIue51B/0zmeIMxpIGDVhz4GhJALBvnKs/FRa2T7jy4Ori9wFwaHVt0zWV7MIFglKAHbgnVxVTw7U1w==
+  github.com/ksxnodemodules/fs-force-action-as-string/2913726b38973ae2038a5b777a8ac2938ae2f765:
+    dev: false
+    name: fs-force-action-as-string
+    resolution:
+      tarball: 'https://codeload.github.com/ksxnodemodules/fs-force-action-as-string/tar.gz/2913726b38973ae2038a5b777a8ac2938ae2f765'
+    version: 0.0.0
+  github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f:
+    dependencies:
+      fs-one-promise-queue: 1.0.1
+    dev: false
+    engines:
+      node: '>= 6.0.0'
+    name: fs-force-utils
+    resolution:
+      tarball: 'https://codeload.github.com/ksxnodemodules/fs-force-utils/tar.gz/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f'
+    version: 0.0.0
+  github.com/ksxnodemodules/promise-queue/5773019c5b20c3ccf3a6e888a502af6aac56d88c:
+    dependencies:
+      extended-promise: 0.2.0
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    name: promise-queue
+    resolution:
+      tarball: 'https://codeload.github.com/ksxnodemodules/promise-queue/tar.gz/5773019c5b20c3ccf3a6e888a502af6aac56d88c'
+    version: 1.0.1
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   '@pnpm/types': ^1.7.0
-  '@types/fs-extra': ^5.0.0
+  '@types/get-stdin': ^5.0.1
   '@types/js-yaml': ^3.10.1
-  fs-extra: ^5.0.0
+  fs-force: ^3.1.0
+  get-stdin: ^5.0.1
   jest-cli: ^22.1.4
   js-yaml: ^3.10.0
+  number-enum: ^2.1.1
   pnpm: ^1.30.2
   standard: ^10.0.3
   x-iterable: ^6.0.1
+  yargs: ^10.1.1

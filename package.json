@@ -11,16 +11,20 @@
   },
   "homepage": "https://github.com/ksxnodeapps/pnpm-package-group#readme",
   "description": "",
-  "main": "index.js",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "main": "index.js",
+  "bin": "index.js",
   "dependencies": {
-    "fs-extra": "^5.0.0",
+    "pnpm": "^1.30.2",
+    "get-stdin": "^5.0.1",
+    "number-enum": "^2.1.1",
+    "fs-force": "^3.1.0",
     "js-yaml": "^3.10.0",
-    "pnpm": "^1.30.2"
+    "yargs": "^10.1.1"
   },
   "devDependencies": {
     "@pnpm/types": "^1.7.0",
-    "@types/fs-extra": "^5.0.0",
+    "@types/get-stdin": "^5.0.1",
     "@types/js-yaml": "^3.10.1",
     "jest-cli": "^22.1.4",
     "standard": "^10.0.3",

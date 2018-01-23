@@ -1,0 +1,32 @@
+usage: |-
+  $ $0 [options] [arguments]
+
+example: |-
+  $ $0 --local=local-packages packages.yaml
+
+options:
+  help:
+    alias: h
+
+  local:
+    alias: l
+    describe: Directory contains local packages
+    type: string
+    default: ''
+
+  pnpm:
+    describe: Program to call
+    type: string
+    default: pnpm
+
+  shell:
+    describe: Whether shell is used
+    type: boolean
+    default: true
+
+  quiet-pnpm:
+    describe: Don't print pnpm output
+    type: boolean
+    default: false
+
+env: PNPM_PKG_GROUP
