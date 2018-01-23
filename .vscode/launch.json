@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Jest Tests",
-      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
       "args": [
         "-i"
       ],
