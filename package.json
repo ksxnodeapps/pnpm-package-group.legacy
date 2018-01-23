@@ -14,6 +14,12 @@
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "main": "index.js",
   "bin": "index.js",
+  "standard": {
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
   "dependencies": {
     "pnpm": "^1.30.2",
     "get-stdin": "^5.0.1",
