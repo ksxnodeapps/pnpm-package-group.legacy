@@ -24,3 +24,4 @@ docs
 yarn.lock
 package-lock.json
 shrinkwrap*
+renovate*
