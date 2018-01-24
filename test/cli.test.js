@@ -4,7 +4,7 @@ const {readFileSync, readdirSync, statSync} = require('fs')
 const {spawnSync} = require('child_process')
 const fsForce = require('fs-force')
 
-const setOfLines = string => new Set(
+const listOfLines = string => (
   String(string)
     .split(/\n|\r/)
     .filter(Boolean)
@@ -14,12 +14,12 @@ const setOfLines = string => new Set(
 describe('The command when everything aside itself works', () => {
   const outputDir = join(__dirname, 'cli-output.tmp')
 
-  const expected = setOfLines(
+  const expected = listOfLines(
     readFileSync(resolve(__dirname, 'data/cli-expect.txt'), 'utf8')
   )
 
   const testSuccess = description => {
-    const received = setOfLines(
+    const received = listOfLines(
       spawnSync('node', [
         resolve(__dirname, '../index.js'),
         '--pnpm=echo',
