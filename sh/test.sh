@@ -1,1 +1,1 @@
-jest --coverage $@
+./sh/jest.js --coverage $@
