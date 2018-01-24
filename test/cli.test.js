@@ -40,9 +40,9 @@ describe('The command when everything aside itself works', () => {
       })
 
       it('are also folders', () => {
-        expect(
-          paths.every(x => statSync(x).isDirectory())
-        ).toBe(true)
+        paths.forEach(x =>
+          expect(statSync(x).isDirectory()).toBe(true)
+        )
       })
     })
   })
