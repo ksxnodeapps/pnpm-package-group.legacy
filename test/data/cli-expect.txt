@@ -1,5 +1,8 @@
+[INFO] (global) abc, def, ghi
 install --global abc@latest def@latest ghi@latest
+[INFO] (local: local1) foo, bar, baz
 install foo@latest bar@latest baz@latest
+[INFO] (local: local2) qux, quux
 install qux@latest quux@latest
 status: OK — list: abc, def, ghi
 status: OK — list: foo, bar, baz
