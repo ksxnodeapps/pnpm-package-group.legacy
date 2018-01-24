@@ -10,9 +10,9 @@
       "name": "Launch Program",
       "program": "${workspaceFolder}/index.js",
       "args": [
-        "pnpm=echo",
-        "--local=out",
-        "test/list.yaml"
+        "--pnpm=echo",
+        "--local=test/cli-output.tmp",
+        "test/data/cli-input.yaml"
       ]
     },
     {

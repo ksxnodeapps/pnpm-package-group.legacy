@@ -1,16 +1,6 @@
-install --global abc@latest
-install --global def@latest
-install --global ghi@latest
-install foo@latest
-install bar@latest
-install baz@latest
-install qux@latest
-install quux@latest
-abc → status: OK
-def → status: OK
-ghi → status: OK
-foo → status: OK
-bar → status: OK
-baz → status: OK
-qux → status: OK
-quux → status: OK
+install --global abc@latest def@latest ghi@latest
+install foo@latest bar@latest baz@latest
+install qux@latest quux@latest
+status: OK — list: abc, def, ghi
+status: OK — list: foo, bar, baz
+status: OK — list: qux, quux
