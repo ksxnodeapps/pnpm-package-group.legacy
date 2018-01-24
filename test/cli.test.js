@@ -42,11 +42,27 @@ describe('The command when everything aside itself works', () => {
             expect(new Set(names)).toEqual(new Set(['local1', 'local2']))
           })
 
-          it('are also folders', () => {
-            paths.forEach(x =>
+          paths.forEach(x => describe(`has ${x}`, () => {
+            it('which is a folder', () => {
               expect(statSync(x).isDirectory()).toBe(true)
-            )
-          })
+            })
+
+            describe('has a package.json', () => {
+              const file = resolve(x, 'package.json')
+
+              it('which is a file', () => {
+                expect(statSync(file).isFile()).toBe(true)
+              })
+
+              it('which valid JSON code', () => {
+                const object = JSON.parse(readFileSync(file, 'utf8'))
+                expect(typeof object).toBe('object')
+                expect(typeof object.name).toBe('string')
+                expect(object.version).toMatch(/^[0-9]+\.[0-9]+\.[0-9]+$/)
+                expect(object).toHaveProperty('private', true)
+              })
+            })
+          }))
         })
       })
     })
