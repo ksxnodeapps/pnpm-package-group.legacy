@@ -47,14 +47,14 @@ describe('The command when everything aside itself works', () => {
               expect(statSync(x).isDirectory()).toBe(true)
             })
 
-            describe('has a package.json', () => {
+            describe('whose package.json', () => {
               const file = resolve(x, 'package.json')
 
-              it('which is a file', () => {
+              it('is a file', () => {
                 expect(statSync(file).isFile()).toBe(true)
               })
 
-              it('which valid JSON code', () => {
+              it('contains valid JSON code', () => {
                 const object = JSON.parse(readFileSync(file, 'utf8'))
                 expect(typeof object).toBe('object')
                 expect(typeof object.name).toBe('string')
