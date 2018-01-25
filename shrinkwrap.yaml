@@ -1,5 +1,5 @@
 dependencies:
-  fs-force: 3.1.0
+  fs-force: 3.1.1
   get-stdin: 5.0.1
   js-yaml: 3.10.0
   number-enum: 2.1.1
@@ -2638,15 +2638,17 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha1-uYnH3wLjRGQP3gux3i4u7KXNT00=
-  /fs-force-write-file-sync/1.0.1:
+  /fs-force-write-file-sync/1.0.3:
     dependencies:
+      fs-force-delete-sync: 1.0.0
+      fs-force-mkdir-sync: 1.1.0
       fs-force-utils: github.com/ksxnodemodules/fs-force-utils/045ba6b68a3f00598173a3aaf8c3b8c14ff3b62f
       just-try: 1.1.1
     dev: false
     engines:
       node: '>=6.0.0'
     resolution:
-      integrity: sha1-Sn0ItBxzzsIQO3YtpBCno9FKOLY=
+      integrity: sha512-2ZiQUspVbvZGFX8DE1EL4b71zxF/q/XcoIco47pbWoLxb0yNGWL6ixdOkircSdb3NVbzPViHXyk7zhRvniia8g==
   /fs-force-write-file/1.0.1:
     dependencies:
       fs-force-delete: 1.1.1
@@ -2659,7 +2661,7 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha1-DIqRuUkzQTm564YPzyf1x6vPmIA=
-  /fs-force/3.1.0:
+  /fs-force/3.1.1:
     dependencies:
       fs-force-action-as-string: github.com/ksxnodemodules/fs-force-action-as-string/2913726b38973ae2038a5b777a8ac2938ae2f765
       fs-force-delete: 1.1.1
@@ -2667,13 +2669,13 @@ packages:
       fs-force-mkdir: 1.4.0
       fs-force-mkdir-sync: 1.1.0
       fs-force-write-file: 1.0.1
-      fs-force-write-file-sync: 1.0.1
+      fs-force-write-file-sync: 1.0.3
     dev: false
     engines:
       node: '>=6.0.0'
       npm: '>=3.0.0'
     resolution:
-      integrity: sha1-5vWcnExAXgaCkipXXglI58Y7kKU=
+      integrity: sha512-R9vf186et2xeZcIxqu6TAZ4M8yJKoG1ed87ayhVtmXppR8Y3SIADg4wvJQPk+SkCGcU/WAMf4D3SYkLxB1LmCg==
   /fs-minipass/1.2.5:
     dependencies:
       minipass: 2.2.1
@@ -7518,7 +7520,7 @@ specifiers:
   '@pnpm/types': ^1.7.0
   '@types/get-stdin': ^5.0.1
   '@types/js-yaml': ^3.10.1
-  fs-force: ^3.1.0
+  fs-force: ^3.1.1
   get-stdin: ^5.0.1
   jest-cli: ^22.1.4
   js-yaml: ^3.10.0
