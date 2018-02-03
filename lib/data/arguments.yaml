@@ -29,4 +29,9 @@ options:
     type: boolean
     default: false
 
+  exit-status-codes:
+    describe: Show exit status codes
+    type: boolean
+    default: false
+
 env: PNPM_PKG_GROUP
