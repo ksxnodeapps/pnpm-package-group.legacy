@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "pnpm": "^1.30.2",
-    "get-stdin": "^5.0.1",
+    "get-stdin": "^6.0.0",
     "number-enum": "^2.1.1",
     "fs-force": "^3.1.1",
     "js-yaml": "^3.10.0",
