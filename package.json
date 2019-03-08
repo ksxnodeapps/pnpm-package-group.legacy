@@ -29,7 +29,7 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "@pnpm/types": "^1.7.0",
+    "@pnpm/types": "^3.0.0",
     "@types/get-stdin": "^5.0.1",
     "@types/js-yaml": "^3.10.1",
     "jest-cli": "^22.1.4",
